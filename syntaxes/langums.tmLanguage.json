@@ -13,40 +13,72 @@
 		"keywords": {
 			"patterns": [
 				{
+					"name": "meta.preprocessor.langums",
+					"match": "#(define|undef|include)\\b"
+				},
+				{
 					"name": "keyword.control.langums",
-					"match": "\\b(if|while|return|fn|global|var)\\b"
+					"match": "\\b(if|while|return|fn|global|var|unit|true|false)\\b"
 				},
 				{
-					"name": "variable.parameter.langums.unit",
-					"match": "\\b(TerranMarine|TerranGhost|TerranVulture|TerranGoliath|TerranGoliathTurret|TerranSiegeTankTankMode|TerranSiegeTankTankModeTurret|TerranSCV|TerranWraith|TerranScienceVessel|HeroGuiMontag|TerranDropship|TerranBattlecruiser|TerranVultureSpiderMine|TerranNuclearMissile|TerranCivilian|HeroSarahKerrigan|HeroAlanSchezar|HeroAlanSchezarTurret|HeroJimRaynorVulture|HeroJimRaynorMarine|HeroTomKazansky|HeroMagellan|HeroEdmundDukeTankMode|HeroEdmundDukeTankModeTurret|HeroEdmundDukeSiegeMode|HeroEdmundDukeSiegeModeTurret|HeroArcturusMengsk|HeroHyperion|HeroNoradII|TerranSiegeTankSiegeMode|TerranSiegeTankSiegeModeTurret|TerranFirebat|SpellScannerSweep|TerranMedic|ZergLarva|ZergEgg|ZergZergling|ZergHydralisk|ZergUltralisk|ZergBroodling|ZergDrone|ZergOverlord|ZergMutalisk|ZergGuardian|ZergQueen|ZergDefiler|ZergScourge|HeroTorrasque|HeroMatriarch|ZergInfestedTerran|HeroInfestedKerrigan|HeroUncleanOne|HeroHunterKiller|HeroDevouringOne|HeroKukulzaMutalisk|HeroKukulzaGuardian|HeroYggdrasill|TerranValkyrie|ZergCocoon|ProtossCorsair|ProtossDarkTemplar|ZergDevourer|ProtossDarkArchon|ProtossProbe|ProtossZealot|ProtossDragoon|ProtossHighTemplar|ProtossArchon|ProtossShuttle|ProtossScout|ProtossArbiter|ProtossCarrier|ProtossInterceptor|HeroDarkTemplar|HeroZeratul|HeroTassadarZeratulArchon|HeroFenixZealot|HeroFenixDragoon|HeroTassadar|HeroMojo|HeroWarbringer|HeroGantrithor|ProtossReaver|ProtossObserver|ProtossScarab|HeroDanimoth|HeroAldaris|HeroArtanis|CritterRhynadon|CritterBengalaas|SpecialCargoShip|SpecialMercenaryGunship|CritterScantid|CritterKakaru|CritterRagnasaur|CritterUrsadon|ZergLurkerEgg|HeroRaszagal|HeroSamirDuran|HeroAlexeiStukov|SpecialMapRevealer|HeroGerardDuGalle|ZergLurker|HeroInfestedDuran|SpellDisruptionWeb|TerranCommandCenter|TerranComsatStation|TerranNuclearSilo|TerranSupplyDepot|TerranRefinery|TerranBarracks|TerranAcademy|TerranFactory|TerranStarport|TerranControlTower|TerranScienceFacility|TerranCovertOps|TerranPhysicsLab|UnusedTerran1|TerranMachineShop|UnusedTerran2|TerranEngineeringBay|TerranArmory|TerranMissileTurret|TerranBunker|SpecialCrashedNoradII|SpecialIonCannon|PowerupUrajCrystal|PowerupKhalisCrystal|ZergInfestedCommandCenter|ZergHatchery|ZergLair|ZergHive|ZergNydusCanal|ZergHydraliskDen|ZergDefilerMound|ZergGreaterSpire|ZergQueensNest|ZergEvolutionChamber|ZergUltraliskCavern|ZergSpire|ZergSpawningPool|ZergCreepColony|ZergSporeColony|UnusedZerg1|ZergSunkenColony|SpecialOvermindWithShell|SpecialOvermind|ZergExtractor|SpecialMatureChrysalis|SpecialCerebrate|SpecialCerebrateDaggoth|UnusedZerg2|ProtossNexus|ProtossRoboticsFacility|ProtossPylon|ProtossAssimilator|UnusedProtoss1|ProtossObservatory|ProtossGateway|UnusedProtoss2|ProtossPhotonCannon|ProtossCitadelofAdun|ProtossCyberneticsCore|ProtossTemplarArchives|ProtossForge|ProtossStargate|SpecialStasisCellPrison|ProtossFleetBeacon|ProtossArbiterTribunal|ProtossRoboticsSupportBay|ProtossShieldBattery|SpecialKhaydarinCrystalForm|SpecialProtossTemple|SpecialXelNagaTemple|ResourceMineralField|ResourceMineralFieldType2|ResourceMineralFieldType3|UnusedCave|UnusedCaveIn|UnusedCantina|UnusedMiningPlatform|UnusedIndependantCommandCenter|SpecialIndependantStarport|UnusedIndependantJumpGate|UnusedRuins|UnusedKhaydarinCrystalFormation|ResourceVespeneGeyser|SpecialWarpGate|SpecialPsiDisrupter|UnusedZergMarker|UnusedTerranMarker|UnusedProtossMarker|SpecialZergBeacon|SpecialTerranBeacon|SpecialProtossBeacon|SpecialZergFlagBeacon|SpecialTerranFlagBeacon|SpecialProtossFlagBeacon|SpecialPowerGenerator|SpecialOvermindCocoon|SpellDarkSwarm|SpecialFloorMissileTrap|SpecialFloorHatch|SpecialUpperLevelDoor|SpecialRightUpperLevelDoor|SpecialPitDoor|SpecialRightPitDoor|SpecialFloorGunTrap|SpecialWallMissileTrap|SpecialWallFlameTrap|SpecialRightWallMissileTrap|SpecialRightWallFlameTrap|SpecialStartLocation|PowerupFlag|PowerupYoungChrysalis|PowerupPsiEmitter|PowerupDataDisk|PowerupKhaydarinCrystal|PowerupMineralClusterType1|PowerupMineralClusterType2|PowerupProtossGasOrbType1|PowerupProtossGasOrbType2|PowerupZergGasSacType1|PowerupZergGasSacType2|PowerupTerranGasTankType1|PowerupTerranGasTankType2|None|AllUnits|Men|Buildings|Factories)\\b"
+					"name": "entity.name.function.langums",
+					"match": "\\b(spawn|kill|remove|move|order|modify|give|set_doodad|set_invincibility|run_ai_script|center_view|ping|talking_portrait|set_resource|add_resource|take_resource|poll_events|print|random|move_loc|end|set_alliance|set_mission_objectives|sleep|pause_game|unpause_game|set_next_scenario|set_score|add_score|subtract_score|set_deaths|add_deaths|remove_deaths|show_leaderboard|show_leaderboard_goal|leaderboard_show_cpu|set_countdown|pause_countdown|unpause_countdown|mute_unit_speech|unmute_unit_speech)\\b"
 				},
 				{
-					"name": "variable.parameter.langums.player",
-					"match": "\\b(Player1|Player2|Player3|Player4|Player5|Player6|Player7|Player8|Player9|Player10|Player11|Player12)\\b"
-				},
-				{
-					"name": "variable.parameter.langums.comparison",
-					"match": "\\b(AtLeast|AtMost|Exactly)\\b"
-				},
-				{
-					"name": "variable.parameter.langums.resourcetype",
-					"match": "\\b(Minerals|Gas)\\b"
+					"name": "entity.name.function.langums.condition",
+					"match": "\\b(bring|commands|commands_least|commands_most|killed|killed_least|killed_most|deaths|accumulate|most_resources|least_resources|elapsed_time|countdown|opponents|score|lowest_score|highest_score)\\b"
 				},
 				{
 					"name": "variable.parameter.langums.endcondition",
 					"match": "\\b(Victory|Defeat|Draw)\\b"
 				},
 				{
-					"name": "entity.name.function.langums",
-					"match": "\\b(poll_events|print|rnd256|set_resource|add_resource|take_resource|center_view|ping|spawn|kill|move|order|modify|give|move_loc|end|set_countdown|set_deaths|add_deaths|remove_deaths|talking_portrait|sleep)\\b"
+					"name": "variable.parameter.langums.resourcetype",
+					"match": "\\b(Minerals|Ore|Gas|Vespene|Both|OreAndGas)\\b"
 				},
 				{
-					"name": "entity.name.function.event.langums",
-					"match": "\\b(bring|accumulate|elapsed_time|commands|killed|deaths|countdown)\\b"
+					"name": "variable.parameter.langums.comparison",
+					"match": "\\b(AtLeast|AtMost|Exactly|LessOrEquals|GreaterOrEquals|Equals)\\b"
 				},
 				{
-					"name": "meta.preprocessor.langums",
-					"match": "#(define|undef|include)\\b"
+					"name": "variable.parameter.langums.order",
+					"match": "\\b(Move|Attack|Patrol)\\b"
+				},
+				{
+					"name": "variable.parameter.langums.unitmod",
+					"match": "\\b(Health|Energy|Shields|Hangar)\\b"
+				},
+				{
+					"name": "variable.parameter.langums.state",
+					"match": "\\b(Enable|Disable|Toggle)\\b"
+				},
+				{
+					"name": "variable.parameter.langums.alliancestatus",
+					"match": "\\b(Ally|Enemy|AlliedVictory)\\b"
+				},
+				{
+					"name": "variable.parameter.langums.player",
+					"match": "\\b(Player1|Player2|Player3|Player4|Player5|Player6|Player7|Player8|Player9|Player10|Player11|Player12|AllPlayers|NeutralPlayers|Force1|Force2|Force3|Force4)\\b"
+				},
+				{
+					"name": "variable.parameter.langums.scoretype",
+					"match": "\\b(Total|Units|Buildings|UnitsAndBuildings|Kills|Razings|KillsAndRazings|Custom)\\b"
+				},
+				{
+					"name": "variable.parameter.langums.unitproperty",
+					"match": "\\b(HitPoints|Health|ShieldPoints|Shields|Energy|ResourceAmount|HangarCount|Cloaked|Burrowed|InTransit|Hallucinated|Invincible)\\b"
+				},
+				{
+					"name": "variable.parameter.langums.unit",
+					"match": "\\b(TerranMarine|TerranGhost|TerranVulture|TerranGoliath|TerranGoliathTurret|TerranSiegeTankTankMode|TerranSiegeTankTankModeTurret|TerranSCV|TerranWraith|TerranScienceVessel|HeroGuiMontag|TerranDropship|TerranBattlecruiser|TerranVultureSpiderMine|TerranNuclearMissile|TerranCivilian|HeroSarahKerrigan|HeroAlanSchezar|HeroAlanSchezarTurret|HeroJimRaynorVulture|HeroJimRaynorMarine|HeroTomKazansky|HeroMagellan|HeroEdmundDukeTankMode|HeroEdmundDukeTankModeTurret|HeroEdmundDukeSiegeMode|HeroEdmundDukeSiegeModeTurret|HeroArcturusMengsk|HeroHyperion|HeroNoradII|TerranSiegeTankSiegeMode|TerranSiegeTankSiegeModeTurret|TerranFirebat|SpellScannerSweep|TerranMedic|ZergLarva|ZergEgg|ZergZergling|ZergHydralisk|ZergUltralisk|ZergBroodling|ZergDrone|ZergOverlord|ZergMutalisk|ZergGuardian|ZergQueen|ZergDefiler|ZergScourge|HeroTorrasque|HeroMatriarch|ZergInfestedTerran|HeroInfestedKerrigan|HeroUncleanOne|HeroHunterKiller|HeroDevouringOne|HeroKukulzaMutalisk|HeroKukulzaGuardian|HeroYggdrasill|TerranValkyrie|ZergCocoon|ProtossCorsair|ProtossDarkTemplar|ZergDevourer|ProtossDarkArchon|ProtossProbe|ProtossZealot|ProtossDragoon|ProtossHighTemplar|ProtossArchon|ProtossShuttle|ProtossScout|ProtossArbiter|ProtossCarrier|ProtossInterceptor|HeroDarkTemplar|HeroZeratul|HeroTassadarZeratulArchon|HeroFenixZealot|HeroFenixDragoon|HeroTassadar|HeroMojo|HeroWarbringer|HeroGantrithor|ProtossReaver|ProtossObserver|ProtossScarab|HeroDanimoth|HeroAldaris|HeroArtanis|CritterRhynadon|CritterBengalaas|SpecialCargoShip|SpecialMercenaryGunship|CritterScantid|CritterKakaru|CritterRagnasaur|CritterUrsadon|ZergLurkerEgg|HeroRaszagal|HeroSamirDuran|HeroAlexeiStukov|SpecialMapRevealer|HeroGerardDuGalle|ZergLurker|HeroInfestedDuran|SpellDisruptionWeb|TerranCommandCenter|TerranComsatStation|TerranNuclearSilo|TerranSupplyDepot|TerranRefinery|TerranBarracks|TerranAcademy|TerranFactory|TerranStarport|TerranControlTower|TerranScienceFacility|TerranCovertOps|TerranPhysicsLab|UnusedTerran1|TerranMachineShop|UnusedTerran2|TerranEngineeringBay|TerranArmory|TerranMissileTurret|TerranBunker|SpecialCrashedNoradII|SpecialIonCannon|PowerupUrajCrystal|PowerupKhalisCrystal|ZergInfestedCommandCenter|ZergHatchery|ZergLair|ZergHive|ZergNydusCanal|ZergHydraliskDen|ZergDefilerMound|ZergGreaterSpire|ZergQueensNest|ZergEvolutionChamber|ZergUltraliskCavern|ZergSpire|ZergSpawningPool|ZergCreepColony|ZergSporeColony|UnusedZerg1|ZergSunkenColony|SpecialOvermindWithShell|SpecialOvermind|ZergExtractor|SpecialMatureChrysalis|SpecialCerebrate|SpecialCerebrateDaggoth|UnusedZerg2|ProtossNexus|ProtossRoboticsFacility|ProtossPylon|ProtossAssimilator|UnusedProtoss1|ProtossObservatory|ProtossGateway|UnusedProtoss2|ProtossPhotonCannon|ProtossCitadelofAdun|ProtossCyberneticsCore|ProtossTemplarArchives|ProtossForge|ProtossStargate|SpecialStasisCellPrison|ProtossFleetBeacon|ProtossArbiterTribunal|ProtossRoboticsSupportBay|ProtossShieldBattery|SpecialKhaydarinCrystalForm|SpecialProtossTemple|SpecialXelNagaTemple|ResourceMineralField|ResourceMineralFieldType2|ResourceMineralFieldType3|UnusedCave|UnusedCaveIn|UnusedCantina|UnusedMiningPlatform|UnusedIndependantCommandCenter|SpecialIndependantStarport|UnusedIndependantJumpGate|UnusedRuins|UnusedKhaydarinCrystalFormation|ResourceVespeneGeyser|SpecialWarpGate|SpecialPsiDisrupter|UnusedZergMarker|UnusedTerranMarker|UnusedProtossMarker|SpecialZergBeacon|SpecialTerranBeacon|SpecialProtossBeacon|SpecialZergFlagBeacon|SpecialTerranFlagBeacon|SpecialProtossFlagBeacon|SpecialPowerGenerator|SpecialOvermindCocoon|SpellDarkSwarm|SpecialFloorMissileTrap|SpecialFloorHatch|SpecialUpperLevelDoor|SpecialRightUpperLevelDoor|SpecialPitDoor|SpecialRightPitDoor|SpecialFloorGunTrap|SpecialWallMissileTrap|SpecialWallFlameTrap|SpecialRightWallMissileTrap|SpecialRightWallFlameTrap|SpecialStartLocation|PowerupFlag|PowerupYoungChrysalis|PowerupPsiEmitter|PowerupDataDisk|PowerupKhaydarinCrystal|PowerupMineralClusterType1|PowerupMineralClusterType2|PowerupProtossGasOrbType1|PowerupProtossGasOrbType2|PowerupZergGasSacType1|PowerupZergGasSacType2|PowerupTerranGasTankType1|PowerupTerranGasTankType2|None|AllUnits|Men|Buildings|Factories)\\b"
+				},
+				{
+					"name": "variable.parameter.langums.aiscript",
+					"match": "\\b(TerranCustomLevel|ZergCustomLevel|ProtossCustomLevel|TerranExpansionCustomLevel|ZergExpansionCustomLevel|ProtossExpansionCustomLevel|TerranCampaignEasy|TerranCampaignMedium|TerranCampaignDifficult|TerranCampaignInsane|TerranCampaignAreaTown|ZergCampaignEasy|ZergCampaignMedium|ZergCampaignDifficult|ZergCampaignInsane|ZergCampaignAreaTown|ProtossCampaignEasy|ProtossCampaignMedium|ProtossCampaignDifficult|ProtossCampaignInsane|ProtossCampaignAreaTown|ExpansionTerranCampaignEasy|ExpansionTerranCampaignMedium|ExpansionTerranCampaignDifficult|ExpansionTerranCampaignInsane|ExpansionTerranCampaignAreaTown|ExpansionZergCampaignEasy|ExpansionZergCampaignMedium|ExpansionZergCampaignDifficult|ExpansionZergCampaignInsane|ExpansionZergCampaignAreaTown|ExpansionProtossCampaignEasy|ExpansionProtossCampaignMedium|ExpansionProtossCampaignDifficult|ExpansionProtossCampaignInsane|ExpansionProtossCampaignAreaTown|SetPlayerToEnemy|SetPlayerToAlly|ValueThisAreaHigher|EnterClosestBunker|EnterTransport|ExitTransport)\\b"
+				},
+				{
+					"name": "variable.parameter.langums.leaderboardtype",
+					"match": "\\b(ControlAtLocation|Control|Greed|Kills|Points|Resources)\\b"
 				}
 			]
 		},
