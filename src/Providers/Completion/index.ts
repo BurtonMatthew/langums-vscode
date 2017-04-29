@@ -5,7 +5,8 @@ import { spawn } from 'child_process';
 class CompletionProvider implements vscode.CompletionItemProvider 
 {
     private fs = require('fs');
-    public completionItems:vscode.CompletionItem[] = [];
+    private completionItems:vscode.CompletionItem[] = [];
+    private config = vscode.workspace.getConfiguration('langums');
 
     constructor(context:vscode.ExtensionContext) 
     {
@@ -41,6 +42,9 @@ class CompletionProvider implements vscode.CompletionItemProvider
                     }
                     newItem.detail = obj.completionCategories[i].type;
                     newItem.documentation = obj.completionCategories[i].tokens[j].documentation;
+                    if (this.config['codeCompletion'] === true) {
+                        newItem.insertText = obj.completionCategories[i].tokens[j].snippet;
+                    }
                     this.completionItems.push(newItem);
                 }
             }

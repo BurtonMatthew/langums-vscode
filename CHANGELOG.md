@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.2.5] - 2017-04-29
+### Added
+- Snippets on intrinsic function completion
+- Config options to enable snippets/completion
+
 ## [0.2.0] - 2017-04-28
 ### Added
 - Code Completion on Instrinsics

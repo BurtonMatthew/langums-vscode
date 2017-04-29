@@ -3,6 +3,8 @@
 Support for LangUMS, a programming language by Alexander Dzhoganov for compiling broodwar maps. https://github.com/AlexanderDzhoganov/langums
 
 ## Features
-* Syntax Highlighting on Instrinsics
-* Code Completion on Intrinsics
+* Syntax Highlighting on instrinsics
 ![SyntaxHighlighting](images/syntax.png)
+* Code Completion on intrinsics
+* Snippets for intrinsic functions and conditions
+![Snippets](images/snippets.gif)

@@ -7,43 +7,53 @@
             "tokens":[
                 {
                     "token": "spawn",
-                    "documentation": "Spawns units at a location with optional properties."
+                    "documentation": "Spawns units at a location with optional properties.",
+                    "snippet": "spawn({{Unit}}, {{Player}}, {{Expression}}, {{Location}}, {{OptionalProps}});{{}}"                    
                 },
                 {
                     "token": "kill",
-                    "documentation": "Kills units at an optional location."
+                    "documentation": "Kills units at an optional location.",
+                    "snippet": "kill({{Unit}}, {{Player}}, {{Expression}}, {{OptionalLocation}});{{}}"
                 },
                 {
                     "token": "remove",
-                    "documentation": "Removes units at an optional location."
+                    "documentation": "Removes units at an optional location.",
+                    "snippet": "remove({{Unit}}, {{Player}}, {{Expression}}, {{OptionalLocation}});{{}}"
                 },
                 {
                     "token": "move",
-                    "documentation": "Moves units from one location to another."
+                    "documentation": "Moves units from one location to another.",
+                    "snippet": "move({{Unit}}, {{Player}}, {{Expression}}, {{SrcLocation}}, {{DstLocation}});{{}}"
                 },
                 {
                     "token": "order",
-                    "documentation": "Orders a units to move, attack or patrol."
+                    "documentation": "Orders a units to move, attack or patrol.",
+                    "snippet": "order({{Unit}}, {{Player}}, {{Order}}, {{SrcLocation}}, {{DstLocation}});{{}}"
                 },
                 {
                     "token": "modify",
-                    "documentation": "Modifies a unit's HP, SP, energy or hangar count."
+                    "documentation": "Modifies a unit's HP, SP, energy or hangar count.",
+                    "snippet": "modify({{Unit}}, {{Player}}, {{Expression}}, {{UnitMod}}, {{ModQuantity}}, {{Location}});{{}}"
                 },
                 {
                     "token": "give",
-                    "documentation": "Gives units to another player."
+                    "documentation": "Gives units to another player.",
+                    "snippet": "give({{Unit}}, {{SrcPlayer}}, {{DstPlayer}}, {{Expression}}, {{Location}});{{}}"
                 },
                 {
                     "token": "set_doodad",
-                    "documentation": "Sets/toggles doodad State."
+                    "documentation": "Sets/toggles doodad State.",
+                    "snippet": "set_doodad({{Player}}, {{Unit}}, {{State}}, {{Location}});{{}}"
                 },
                 {
                     "token": "set_invincibility",
-                    "documentation": "Sets/toggles invincibility for units at location."
+                    "documentation": "Sets/toggles invincibility for units at location.",
+                    "snippet": "set_invincibility({{Player}}, {{Unit}}, {{State}}, {{Location}});{{}}"
                 },
                 {
                     "token": "run_ai_script",
-                    "documentation": "Runs an AI script."
+                    "documentation": "Runs an AI script.",
+                    "snippet": "run_ai_script({{Player}}, {{AIScript}}, {{OptionalLocation}});{{}}"
                 }
             ]
         },
@@ -53,15 +63,18 @@
             "tokens":[
                 {
                     "token": "center_view",
-                    "documentation": "Centers the view on a location for a player."
+                    "documentation": "Centers the view on a location for a player.",
+                    "snippet": "center_view({{Player}}, {{Location}});{{}}"
                 },
                 {
                     "token": "ping",
-                    "documentation": "Triggers a minimap ping on a location for a player."
+                    "documentation": "Triggers a minimap ping on a location for a player.",
+                    "snippet": "ping({{Player}}, {{Location}});{{}}"
                 },
                 {
                     "token": "talking_portrait",
-                    "documentation": "Shows the unit talking portrait for an amount of seconds."
+                    "documentation": "Shows the unit talking portrait for an amount of seconds.",
+                    "snippet": "talking_portrait({{Player}}, {{Unit}}, {{Quantity}});{{}}"
                 }
             ]
         },
@@ -71,15 +84,18 @@
             "tokens":[
                 {
                     "token": "set_resource",
-                    "documentation": "Sets the resource count for a player."
+                    "documentation": "Sets the resource count for a player.",
+                    "snippet" : "set_resource({{Player}}, {{ResourceType}}, {{Expression}});{{}}"
                 },
                 {
                     "token": "add_resource",
-                    "documentation": "Gives resources to a player."
+                    "documentation": "Gives resources to a player.",
+                    "snippet" : "add_resource({{Player}}, {{ResourceType}}, {{Expression}});{{}}"
                 },
                 {
                     "token": "take_resource",
-                    "documentation": "Takes resources from a player."
+                    "documentation": "Takes resources from a player.",
+                    "snippet" : "take_resource({{Player}}, {{ResourceType}}, {{Expression}});{{}}"
                 }
             ]
         },
@@ -89,47 +105,58 @@
             "tokens":[
                 {
                     "token": "poll_events",
-                    "documentation": "Runs any associated event handlers."
+                    "documentation": "Runs any associated event handlers.",
+                    "snippet": "poll_events();"
                 },
                 {
                     "token": "print",
-                    "documentation": "Prints a message, defaults to all players."
+                    "documentation": "Prints a message, defaults to all players.",
+                    "snippet": "print({{Text}}, {{OptionalPlayer}});{{}}"
                 },
                 {
                     "token": "random",
-                    "documentation": "Returns a random value between 0 and 255 (inclusive)."
+                    "documentation": "Returns a random value between 0 and 255 (inclusive).",
+                    "snippet": "random();"
                 },
                 {
                     "token": "move_loc",
-                    "documentation": "Centers DstLocation on a unit at SrcLocation."
+                    "documentation": "Centers DstLocation on a unit at SrcLocation.",
+                    "snippet": "move_loc({{Unit}}, {{Player}}, {{SrcLocation}}, {{DstLocation}});{{}}"
                 },
                 {
                     "token": "end",
-                    "documentation": "Ends the game for player with EndCondition."
+                    "documentation": "Ends the game for player with EndCondition.",
+                    "snippet": "end({{Player}}, {{EndCondition}});{{}}"
                 },
                 {
                     "token": "set_alliance",
-                    "documentation": "Sets the alliance status between two players."
+                    "documentation": "Sets the alliance status between two players.",
+                    "snippet": "set_alliance({{Player}}, {{TargetPlayer}}, {{AllianceStatus}});{{}}"
                 },
                 {
                     "token": "set_mission_objectives",
-                    "documentation": "Sets the mission objectives."
+                    "documentation": "Sets the mission objectives.",
+                    "snippet": "set_mission_objectives({{Text}});{{}}"
                 },
                 {
                     "token": "sleep",
-                    "documentation": "Waits for a given amount of milliseconds."
+                    "documentation": "Waits for a given amount of milliseconds.",
+                    "snippet": "sleep({{Quantity}});{{}}"
                 },
                 {
                     "token": "pause_game",
-                    "documentation": "Pauses the game (singleplayer only)."
+                    "documentation": "Pauses the game (singleplayer only).",
+                    "snippet": "pause_game();"
                 },
                 {
                     "token": "unpause_game",
-                    "documentation": "Unpauses the game (singleplayer only)."
+                    "documentation": "Unpauses the game (singleplayer only).",
+                    "snippet": "unpause_game();"
                 },
                 {
                     "token": "set_next_scenario",
-                    "documentation": "Sets the next map to run (singleplayer only)."
+                    "documentation": "Sets the next map to run (singleplayer only).",
+                    "snippet": "set_next_scenario({{Text}});{{}}"
                 }
             ]
         },
@@ -139,31 +166,33 @@
             "tokens":[
                 {
                     "token": "set_score",
-                    "documentation": "Sets the score of a player."
+                    "documentation": "Sets the score of a player.",
+                    "snippet": "set_score({{Player}}, {{ScoreType}}, {{Expression}});{{}}"
                 },
                 {
                     "token": "add_score",
-                    "documentation": "Add to the score of a player."
+                    "documentation": "Add to the score of a player.",
+                    "snippet": "add_score({{Player}}, {{ScoreType}}, {{Expression}});{{}}"
                 },
                 {
                     "token": "subtract_score",
-                    "documentation": "Subtracts from the score of a player."
+                    "documentation": "Subtracts from the score of a player.",
+                    "snippet": "subtract_score({{Player}}, {{ScoreType}}, {{Expression}});{{}}"
                 },
                 {
                     "token": "set_deaths",
-                    "documentation": "Sets the death count for a unit. (Caution!)"
+                    "documentation": "Sets the death count for a unit. (Caution!)",
+                    "snippet":"set_deaths({{Player}}, {{Unit}}, {{Expression}});{{}}"
                 },
                 {
                     "token": "add_deaths",
-                    "documentation": "Adds to the death count for a unit. (Caution!)"
+                    "documentation": "Adds to the death count for a unit. (Caution!)",
+                    "snippet": "add_deaths({{Player}}, {{Unit}}, {{Expression}});{{}}"
                 },
                 {
                     "token": "remove_deaths",
-                    "documentation": "Subtracts from the death count for a unit. (Caution!)"
-                },
-                {
-                    "token": "set_mission_objectives",
-                    "documentation": "Sets the mission objectives."
+                    "documentation": "Subtracts from the death count for a unit. (Caution!)",
+                    "snippet": "remove_deaths({{Player}}, {{Unit}}, {{Expression}});{{}}"
                 },
                 {
                     "token": "show_leaderboard",
@@ -175,7 +204,8 @@
                 },
                 {
                     "token": "leaderboard_show_cpu",
-                    "documentation": "Shows/hides computer players from the leaderboard."
+                    "documentation": "Shows/hides computer players from the leaderboard.",
+                    "snippet": "leaderboard_show_cpu({{State}});{{}}"
                 }
             ]
         },
@@ -185,23 +215,28 @@
             "tokens":[
                 {
                     "token": "set_countdown",
-                    "documentation": "Sets the countdown timer."
+                    "documentation": "Sets the countdown timer.",
+                    "snippet": "set_countdown({{Expression}});{{}}"
                 },
                 {
                     "token": "pause_countdown",
-                    "documentation": "Pauses the countdown timer."
+                    "documentation": "Pauses the countdown timer.",
+                    "snippet": "pause_countdown();"
                 },
                 {
                     "token": "unpause_countdown",
-                    "documentation": "Unpauses the countdown timer."
+                    "documentation": "Unpauses the countdown timer.",
+                    "snippet": "unpause_countdown();"
                 },
                 {
                     "token": "mute_unit_speech",
-                    "documentation": "Mutes unit speech."
+                    "documentation": "Mutes unit speech.",
+                    "snippet": "mute_unit_speech();"
                 },
                 {
                     "token": "unmute_unit_speech",
-                    "documentation": "Unmutes unit speech."
+                    "documentation": "Unmutes unit speech.",
+                    "snippet": "unmute_unit_speech();"
                 }
             ]
         },
@@ -211,35 +246,43 @@
             "tokens":[
                 {
                     "token": "bring",
-                    "documentation": "When a player owns a quantity of units at location."
+                    "documentation": "When a player owns a quantity of units at location.",
+                    "snippet": "bring({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}, {{Location}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "commands",
-                    "documentation": "When a player commands a number of units."
+                    "documentation": "When a player commands a number of units.",
+                    "snippet": "commands({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "commands_least",
-                    "documentation": "When a player commands the least number of units at an optional location."
+                    "documentation": "When a player commands the least number of units at an optional location.",
+                    "snippet": "commands_least({{Player}}, {{Unit}}, {{OptionalLocation}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "commands_most",
-                    "documentation": "When a player commands the most number of units at an optional location."
+                    "documentation": "When a player commands the most number of units at an optional location.",
+                    "snippet": "commands_most({{Player}}, {{Unit}}, {{optional: Location}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "killed",
-                    "documentation": "When a player has killed a number of units."
+                    "documentation": "When a player has killed a number of units.",
+                    "snippet": "killed({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "killed_least",
-                    "documentation": "When a player has killed the lowest quantity of a given unit."
+                    "documentation": "When a player has killed the lowest quantity of a given unit.",
+                    "snippet": "killed_least({{Player}}, {{Unit}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "killed_most",
-                    "documentation": "When a player has killed the highest quantity of a given unit."
+                    "documentation": "When a player has killed the highest quantity of a given unit.",
+                    "snippet": "killed_most({{Player}}, {{Unit}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "deaths",
-                    "documentation": "When a player has lost a number of units."
+                    "documentation": "When a player has lost a number of units.",
+                    "snippet": "deaths({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}) => {\n  {{}}\n}"
                 }
             ]
         },
@@ -249,15 +292,18 @@
             "tokens":[
                 {
                     "token": "accumulate",
-                    "documentation": "When a player owns a quantity of resources."
+                    "documentation": "When a player owns a quantity of resources.",
+                    "snippet": "accumulate({{Player}}, {{Comparison}}, {{Quantity}}, {{ResourceType}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "most_resources",
-                    "documentation": "When a player owns the most of a given resource."
+                    "documentation": "When a player owns the most of a given resource.",
+                    "snippet": "most_resources({{Player}}, {{ResourceType}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "least_resources",
-                    "documentation": "When a player owns the least of a given resource."
+                    "documentation": "When a player owns the least of a given resource.",
+                    "snippet": "least_resources({{Player}}, {{ResourceType}}) => {\n  {{}}\n}"
                 }
             ]
         },
@@ -267,15 +313,18 @@
             "tokens":[
                 {
                     "token": "elapsed_time",
-                    "documentation": "When a certain amount of time has elapsed."
+                    "documentation": "When a certain amount of time has elapsed.",
+                    "snippet": "elapsed_time({{Comparison}}, {{Quantity}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "countdown",
-                    "documentation": "When the countdown timer reaches a amount of seconds."
+                    "documentation": "When the countdown timer reaches a amount of seconds.",
+                    "snippet": "countdown({{Comparison}}, {{Quantity}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "opponents",
-                    "documentation": "When a player has a number of opponents remaining in the game."
+                    "documentation": "When a player has a number of opponents remaining in the game.",
+                    "snippet": "opponents({{Player}}, {{Comparison}}, {{Quantity}}) => {\n  {{}}\n}"
                 }
             ]
         },
@@ -285,15 +334,18 @@
             "tokens":[
                 {
                     "token": "score",
-                    "documentation": "When a player's score reaches a given quantity."
+                    "documentation": "When a player's score reaches a given quantity.",
+                    "snippet": "score({{Player}}, {{ScoreType}}, {{Comparison}}, {{Quantity}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "lowest_score",
-                    "documentation": "When a player has the lowest score."
+                    "documentation": "When a player has the lowest score.",
+                    "snippet": "lowest_score({{Player}}, {{ScoreType}}) => {\n  {{}}\n}"
                 },
                 {
                     "token": "highest_score",
-                    "documentation": "When a player has the highest score."
+                    "documentation": "When a player has the highest score.",
+                    "snippet": "highest_score({{Player}}, {{ScoreType}}) => {\n  {{}}\n}"
                 }
             ]
         },

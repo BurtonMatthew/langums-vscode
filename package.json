@@ -17,6 +17,22 @@
         "Languages"
     ],
     "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "LangUMS Configuration",
+            "properties": {
+            "langums.codeCompletion": {
+                "type": "boolean",
+                "default": true,
+                "description": "Provide code completion."
+                },
+            "langums.codeCompletionSnippets": {
+                "type": "boolean",
+                "default": true,
+                "description": "Use snippets when completing functions."
+                }
+            }
+        },
         "languages": [
             {
                 "id": "langums",
