@@ -22,9 +22,27 @@ class CompletionProvider implements vscode.CompletionItemProvider
         else
         {
             var obj = JSON.parse(data);
-            for(var i in obj.unit)
+            for(var i in obj.completionCategories)
             {
-                this.completionItems.push(new vscode.CompletionItem(obj.unit[i]));
+                for(var j in obj.completionCategories[i].tokens)
+                {
+                    var newItem:vscode.CompletionItem = new vscode.CompletionItem(obj.completionCategories[i].tokens[j].token);
+                    switch(obj.completionCategories[i].kind)
+                    {
+                        case 'Constant':
+                            newItem.kind = vscode.CompletionItemKind.Constant;
+                            break;
+                        case 'Function':
+                            newItem.kind = vscode.CompletionItemKind.Function;
+                            break;
+                        case 'Condition':
+                            newItem.kind = vscode.CompletionItemKind.Method;
+                            break;
+                    }
+                    newItem.detail = obj.completionCategories[i].type;
+                    newItem.documentation = obj.completionCategories[i].tokens[j].documentation;
+                    this.completionItems.push(newItem);
+                }
             }
         }
     }
