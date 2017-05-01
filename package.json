@@ -2,7 +2,7 @@
     "name": "langums",
     "displayName": "LangUMS",
     "description": "VSCode support for LangUMS, for authoring brood war maps.",
-    "version": "0.2.0",
+    "version": "0.2.5",
     "publisher": "glenstorm",
     "engines": {
         "vscode": "^1.11.0"
@@ -21,15 +21,15 @@
             "type": "object",
             "title": "LangUMS Configuration",
             "properties": {
-            "langums.codeCompletion": {
-                "type": "boolean",
-                "default": true,
-                "description": "Provide code completion."
+                "langums.codeCompletion": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Provide code completion."
                 },
-            "langums.codeCompletionSnippets": {
-                "type": "boolean",
-                "default": true,
-                "description": "Use snippets when completing functions."
+                "langums.codeCompletionSnippets": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Use snippets when completing functions."
                 }
             }
         },
