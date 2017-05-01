@@ -51,9 +51,20 @@ class CompletionProvider implements vscode.CompletionItemProvider
         }
     }
 
+    public prevChar(document: vscode.TextDocument, position: vscode.Position): String
+    {
+        if(position.character == 0)
+            return "\n";
+        else
+            return document.lineAt(position.line).text[position.character-1];
+    }
+
     public provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken)
     {
-        return this.completionItems;
+        if(this.prevChar(document,position) != '\"')
+            return this.completionItems;
+        else
+            return [];
     }
 }
 

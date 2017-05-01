@@ -1,5 +1,9 @@
 # Change Log
 
+## [0.2.6] - 2017-04-30
+### Changed
+- Minor quality of life fixes for snippets and code completion
+
 ## [0.2.5] - 2017-04-29
 ### Added
 - Snippets on intrinsic function completion
