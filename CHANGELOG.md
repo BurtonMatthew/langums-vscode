@@ -4,6 +4,7 @@
 ### Added
 - Snippets on intrinsic function completion
 - Config options to enable snippets/completion
+- Comments!
 
 ## [0.2.0] - 2017-04-28
 ### Added
