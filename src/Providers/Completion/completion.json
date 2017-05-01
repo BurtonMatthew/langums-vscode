@@ -75,6 +75,11 @@
                     "token": "talking_portrait",
                     "documentation": "Shows the unit talking portrait for an amount of seconds.",
                     "snippet": "talking_portrait({{Player}}, {{Unit}}, {{Quantity}});{{}}"
+                },
+                {
+                    "token": "set_vision",
+                    "documentation": "Sets whether DstPlayer will share vision with SrcPlayer.",
+                    "snippet": "set_vision({{SrcPlayer}}, {{DstPlayer}}, {{Bool}});{{}}"
                 }
             ]
         },
@@ -119,6 +124,11 @@
                     "snippet": "random();"
                 },
                 {
+                    "token": "is_present",
+                    "documentation": "Checks if one or more players are in the game.",
+                    "snippet": "is_present({{Player...}});{{}}"
+                },
+                {
                     "token": "move_loc",
                     "documentation": "Centers DstLocation on a unit at SrcLocation.",
                     "snippet": "move_loc({{Unit}}, {{Player}}, {{SrcLocation}}, {{DstLocation}});{{}}"
@@ -135,8 +145,8 @@
                 },
                 {
                     "token": "set_mission_objectives",
-                    "documentation": "Sets the mission objectives.",
-                    "snippet": "set_mission_objectives({{Text}});{{}}"
+                    "documentation": "Sets the mission objectives, defaults to all players.",
+                    "snippet": "set_mission_objectives({{Text}}, {{OptionalPlayer}});{{}}"
                 },
                 {
                     "token": "sleep",
@@ -157,6 +167,11 @@
                     "token": "set_next_scenario",
                     "documentation": "Sets the next map to run (singleplayer only).",
                     "snippet": "set_next_scenario({{Text}});{{}}"
+                },
+                {
+                    "token": "play_sound",
+                    "documentation": "Plays a sound from a .wav file.",
+                    "snippet": "play_sound({{Text}});{{}}"
                 }
             ]
         },
@@ -247,42 +262,42 @@
                 {
                     "token": "bring",
                     "documentation": "When a player owns a quantity of units at location.",
-                    "snippet": "bring({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}, {{Location}}) => {\n  {{}}\n}"
+                    "snippet": "bring({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}, {{Location}}){{}}"
                 },
                 {
                     "token": "commands",
                     "documentation": "When a player commands a number of units.",
-                    "snippet": "commands({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}) => {\n  {{}}\n}"
+                    "snippet": "commands({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}){{}}"
                 },
                 {
                     "token": "commands_least",
                     "documentation": "When a player commands the least number of units at an optional location.",
-                    "snippet": "commands_least({{Player}}, {{Unit}}, {{OptionalLocation}}) => {\n  {{}}\n}"
+                    "snippet": "commands_least({{Player}}, {{Unit}}, {{OptionalLocation}}){{}}"
                 },
                 {
                     "token": "commands_most",
                     "documentation": "When a player commands the most number of units at an optional location.",
-                    "snippet": "commands_most({{Player}}, {{Unit}}, {{optional: Location}}) => {\n  {{}}\n}"
+                    "snippet": "commands_most({{Player}}, {{Unit}}, {{optional: Location}}){{}}"
                 },
                 {
                     "token": "killed",
                     "documentation": "When a player has killed a number of units.",
-                    "snippet": "killed({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}) => {\n  {{}}\n}"
+                    "snippet": "killed({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}){{}}"
                 },
                 {
                     "token": "killed_least",
                     "documentation": "When a player has killed the lowest quantity of a given unit.",
-                    "snippet": "killed_least({{Player}}, {{Unit}}) => {\n  {{}}\n}"
+                    "snippet": "killed_least({{Player}}, {{Unit}}){{}}"
                 },
                 {
                     "token": "killed_most",
                     "documentation": "When a player has killed the highest quantity of a given unit.",
-                    "snippet": "killed_most({{Player}}, {{Unit}}) => {\n  {{}}\n}"
+                    "snippet": "killed_most({{Player}}, {{Unit}}){{}}"
                 },
                 {
                     "token": "deaths",
                     "documentation": "When a player has lost a number of units.",
-                    "snippet": "deaths({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}) => {\n  {{}}\n}"
+                    "snippet": "deaths({{Player}}, {{Comparison}}, {{Quantity}}, {{Unit}}) =>{{}}"
                 }
             ]
         },
@@ -293,17 +308,17 @@
                 {
                     "token": "accumulate",
                     "documentation": "When a player owns a quantity of resources.",
-                    "snippet": "accumulate({{Player}}, {{Comparison}}, {{Quantity}}, {{ResourceType}}) => {\n  {{}}\n}"
+                    "snippet": "accumulate({{Player}}, {{Comparison}}, {{Quantity}}, {{ResourceType}}){{}}"
                 },
                 {
                     "token": "most_resources",
                     "documentation": "When a player owns the most of a given resource.",
-                    "snippet": "most_resources({{Player}}, {{ResourceType}}) => {\n  {{}}\n}"
+                    "snippet": "most_resources({{Player}}, {{ResourceType}}){{}}"
                 },
                 {
                     "token": "least_resources",
                     "documentation": "When a player owns the least of a given resource.",
-                    "snippet": "least_resources({{Player}}, {{ResourceType}}) => {\n  {{}}\n}"
+                    "snippet": "least_resources({{Player}}, {{ResourceType}}){{}}"
                 }
             ]
         },
@@ -314,17 +329,17 @@
                 {
                     "token": "elapsed_time",
                     "documentation": "When a certain amount of time has elapsed.",
-                    "snippet": "elapsed_time({{Comparison}}, {{Quantity}}) => {\n  {{}}\n}"
+                    "snippet": "elapsed_time({{Comparison}}, {{Quantity}}){{}}"
                 },
                 {
                     "token": "countdown",
                     "documentation": "When the countdown timer reaches a amount of seconds.",
-                    "snippet": "countdown({{Comparison}}, {{Quantity}}) => {\n  {{}}\n}"
+                    "snippet": "countdown({{Comparison}}, {{Quantity}}){{}}"
                 },
                 {
                     "token": "opponents",
                     "documentation": "When a player has a number of opponents remaining in the game.",
-                    "snippet": "opponents({{Player}}, {{Comparison}}, {{Quantity}}) => {\n  {{}}\n}"
+                    "snippet": "opponents({{Player}}, {{Comparison}}, {{Quantity}}){{}}"
                 }
             ]
         },
@@ -335,17 +350,17 @@
                 {
                     "token": "score",
                     "documentation": "When a player's score reaches a given quantity.",
-                    "snippet": "score({{Player}}, {{ScoreType}}, {{Comparison}}, {{Quantity}}) => {\n  {{}}\n}"
+                    "snippet": "score({{Player}}, {{ScoreType}}, {{Comparison}}, {{Quantity}}){{}}"
                 },
                 {
                     "token": "lowest_score",
                     "documentation": "When a player has the lowest score.",
-                    "snippet": "lowest_score({{Player}}, {{ScoreType}}) => {\n  {{}}\n}"
+                    "snippet": "lowest_score({{Player}}, {{ScoreType}}){{}}"
                 },
                 {
                     "token": "highest_score",
                     "documentation": "When a player has the highest score.",
-                    "snippet": "highest_score({{Player}}, {{ScoreType}}) => {\n  {{}}\n}"
+                    "snippet": "highest_score({{Player}}, {{ScoreType}}){{}}"
                 }
             ]
         },
@@ -719,6 +734,20 @@
             "kind": "Constant",
             "type": "AIScript",
             "tokens":[
+                { "token": "JunkYardDog" },
+                { "token": "MoveDarkTemplarsToRegion" },
+                { "token": "ValueThisAreaHigher" },
+                { "token": "EnterClosestBunker" },
+                { "token": "SetGenericCommandTarget" },
+                { "token": "MakeTheseUnitsPatrol" },
+                { "token": "EnterTransport" },
+                { "token": "ExitTransport" },
+                { "token": "AINukeHere" },
+                { "token": "AIHarassHere" },
+                { "token": "CastDisruptionWeb" },
+                { "token": "CastRecall" },
+                { "token": "SendAllUnitsOnStrategicSuicideMissions" },
+                { "token": "SendAllUnitsOnRandomSuicideMissions" },
                 { "token": "TerranCustomLevel" },
                 { "token": "ZergCustomLevel" },
                 { "token": "ProtossCustomLevel" },
@@ -755,12 +784,249 @@
                 { "token": "ExpansionProtossCampaignDifficult" },
                 { "token": "ExpansionProtossCampaignInsane" },
                 { "token": "ExpansionProtossCampaignAreaTown" },
-                { "token": "SetPlayerToEnemy" },
-                { "token": "SetPlayerToAlly" },
-                { "token": "ValueThisAreaHigher" },
-                { "token": "EnterClosestBunker" },
-                { "token": "EnterTransport" },
-                { "token": "ExitTransport" }
+                { "token": "ClearPreviousCombatData" },
+                { "token": "SetPlayerToEnemyHere" },
+                { "token": "SetPlayerToAllyHere" },
+                { "token": "SwitchComputerPlayerToRescuePassive" },
+                { "token": "TurnOnSharedVisionOfPlayer1WithCurrentPlayer" },
+                { "token": "TurnOnSharedVisionOfPlayer2WithCurrentPlayer" },
+                { "token": "TurnOnSharedVisionOfPlayer3WithCurrentPlayer" },
+                { "token": "TurnOnSharedVisionOfPlayer4WithCurrentPlayer" },
+                { "token": "TurnOnSharedVisionOfPlayer5WithCurrentPlayer" },
+                { "token": "TurnOnSharedVisionOfPlayer6WithCurrentPlayer" },
+                { "token": "TurnOnSharedVisionOfPlayer7WithCurrentPlayer" },
+                { "token": "TurnOnSharedVisionOfPlayer8WithCurrentPlayer" },
+                { "token": "TurnOffSharedVisionOfPlayer1WithCurrentPlayer" },
+                { "token": "TurnOffSharedVisionOfPlayer2WithCurrentPlayer" },
+                { "token": "TurnOffSharedVisionOfPlayer3WithCurrentPlayer" },
+                { "token": "TurnOffSharedVisionOfPlayer4WithCurrentPlayer" },
+                { "token": "TurnOffSharedVisionOfPlayer5WithCurrentPlayer" },
+                { "token": "TurnOffSharedVisionOfPlayer6WithCurrentPlayer" },
+                { "token": "TurnOffSharedVisionOfPlayer7WithCurrentPlayer" },
+                { "token": "TurnOffSharedVisionOfPlayer8WithCurrentPlayer" },
+                { "token": "Terran3ZergTown" },
+                { "token": "Terran5TerranMainTown" },
+                { "token": "Terran5TerranHarvestTown" },
+                { "token": "Terran6AirAttackZerg" },
+                { "token": "Terran6GroundAttackZerg" },
+                { "token": "Terran6ZergSupportTown" },
+                { "token": "Terran7BottomZergTown" },
+                { "token": "Terran7RightZergTown" },
+                { "token": "Terran7MiddleZergTown" },
+                { "token": "Terran8CondeferateTown" },
+                { "token": "Terran9LightAttack" },
+                { "token": "Terran9HeavyAttack" },
+                { "token": "Terran10CondeferateTowns" },
+                { "token": "Terran11ZergTown" },
+                { "token": "Terran11LowerProtossTown" },
+                { "token": "Terran11UpperProtossTown" },
+                { "token": "Terran12NukeTown" },
+                { "token": "Terran12PhoenixTown" },
+                { "token": "Terran12TankTown" },
+                { "token": "Terran1ElectronicDistribution" },
+                { "token": "Terran2ElectronicDistribution" },
+                { "token": "Terran3ElectronicDistribution" },
+                { "token": "Terran1Shareware" },
+                { "token": "Terran2Shareware" },
+                { "token": "Terran3Shareware" },
+                { "token": "Terran4Shareware" },
+                { "token": "Terran5Shareware" },
+                { "token": "Zerg1TerranTown" },
+                { "token": "Zerg2ProtossTown" },
+                { "token": "Zerg3TerranTown" },
+                { "token": "Zerg4RightTerranTown" },
+                { "token": "Zerg4LowerTerranTown" },
+                { "token": "Zerg6ProtossTown" },
+                { "token": "Zerg7AirTown" },
+                { "token": "Zerg7GroundTown" },
+                { "token": "Zerg7SupportTown" },
+                { "token": "Zerg8ScoutTown" },
+                { "token": "Zerg8TemplarTown" },
+                { "token": "Zerg9TealProtoss" },
+                { "token": "Zerg9LeftYellowProtoss" },
+                { "token": "Zerg9RightYellowProtoss" },
+                { "token": "Zerg9LeftOrangeProtoss" },
+                { "token": "Zerg9RightOrangeProtoss" },
+                { "token": "Zerg10LeftTealAttack" },
+                { "token": "Zerg10RightTealSupport" },
+                { "token": "Zerg10LeftYellowSupport" },
+                { "token": "Zerg10RightYellowAttack" },
+                { "token": "Zerg10RedProtoss" },
+                { "token": "Protoss1ZergTown" },
+                { "token": "Protoss2ZergTown" },
+                { "token": "Protoss3AirZergTown" },
+                { "token": "Protoss3GroundZergTown" },
+                { "token": "Protoss4ZergTown" },
+                { "token": "Protoss5ZergTownIsland" },
+                { "token": "Protoss5ZergTownBase" },
+                { "token": "Protoss7LeftProtossTown" },
+                { "token": "Protoss7RightProtossTown" },
+                { "token": "Protoss7ShrineProtoss" },
+                { "token": "Protoss8LeftProtossTown" },
+                { "token": "Protoss8RightProtossTown" },
+                { "token": "Protoss8ProtossDefenders" },
+                { "token": "Protoss9GroundZerg" },
+                { "token": "Protoss9AirZerg" },
+                { "token": "Protoss9SpellZerg" },
+                { "token": "Protoss10MiniTowns" },
+                { "token": "Protoss10MiniTownMaster" },
+                { "token": "Protoss10OvermindDefenders" },
+                { "token": "BroodWarProtoss1TownA" },
+                { "token": "BroodWarProtoss1TownB" },
+                { "token": "BroodWarProtoss1TownC" },
+                { "token": "BroodWarProtoss1TownD" },
+                { "token": "BroodWarProtoss1TownE" },
+                { "token": "BroodWarProtoss1TownF" },
+                { "token": "BroodWarProtoss2TownA" },
+                { "token": "BroodWarProtoss2TownB" },
+                { "token": "BroodWarProtoss2TownC" },
+                { "token": "BroodWarProtoss2TownD" },
+                { "token": "BroodWarProtoss2TownE" },
+                { "token": "BroodWarProtoss2TownF" },
+                { "token": "BroodWarProtoss3TownA" },
+                { "token": "BroodWarProtoss3TownB" },
+                { "token": "BroodWarProtoss3TownC" },
+                { "token": "BroodWarProtoss3TownD" },
+                { "token": "BroodWarProtoss3TownE" },
+                { "token": "BroodWarProtoss3TownF" },
+                { "token": "BroodWarProtoss4TownA" },
+                { "token": "BroodWarProtoss4TownB" },
+                { "token": "BroodWarProtoss4TownC" },
+                { "token": "BroodWarProtoss4TownD" },
+                { "token": "BroodWarProtoss4TownE" },
+                { "token": "BroodWarProtoss4TownF" },
+                { "token": "BroodWarProtoss5TownA" },
+                { "token": "BroodWarProtoss5TownB" },
+                { "token": "BroodWarProtoss5TownC" },
+                { "token": "BroodWarProtoss5TownD" },
+                { "token": "BroodWarProtoss5TownE" },
+                { "token": "BroodWarProtoss5TownF" },
+                { "token": "BroodWarProtoss6TownA" },
+                { "token": "BroodWarProtoss6TownB" },
+                { "token": "BroodWarProtoss6TownC" },
+                { "token": "BroodWarProtoss6TownD" },
+                { "token": "BroodWarProtoss6TownE" },
+                { "token": "BroodWarProtoss6TownF" },
+                { "token": "BroodWarProtoss7TownA" },
+                { "token": "BroodWarProtoss7TownB" },
+                { "token": "BroodWarProtoss7TownC" },
+                { "token": "BroodWarProtoss7TownD" },
+                { "token": "BroodWarProtoss7TownE" },
+                { "token": "BroodWarProtoss7TownF" },
+                { "token": "BroodWarProtoss8TownA" },
+                { "token": "BroodWarProtoss8TownB" },
+                { "token": "BroodWarProtoss8TownC" },
+                { "token": "BroodWarProtoss8TownD" },
+                { "token": "BroodWarProtoss8TownE" },
+                { "token": "BroodWarProtoss8TownF" },
+                { "token": "BroodWarTerran1TownA" },
+                { "token": "BroodWarTerran1TownB" },
+                { "token": "BroodWarTerran1TownC" },
+                { "token": "BroodWarTerran1TownD" },
+                { "token": "BroodWarTerran1TownE" },
+                { "token": "BroodWarTerran1TownF" },
+                { "token": "BroodWarTerran2TownA" },
+                { "token": "BroodWarTerran2TownB" },
+                { "token": "BroodWarTerran2TownC" },
+                { "token": "BroodWarTerran2TownD" },
+                { "token": "BroodWarTerran2TownE" },
+                { "token": "BroodWarTerran2TownF" },
+                { "token": "BroodWarTerran3TownA" },
+                { "token": "BroodWarTerran3TownB" },
+                { "token": "BroodWarTerran3TownC" },
+                { "token": "BroodWarTerran3TownD" },
+                { "token": "BroodWarTerran3TownE" },
+                { "token": "BroodWarTerran3TownF" },
+                { "token": "BroodWarTerran4TownA" },
+                { "token": "BroodWarTerran4TownB" },
+                { "token": "BroodWarTerran4TownC" },
+                { "token": "BroodWarTerran4TownD" },
+                { "token": "BroodWarTerran4TownE" },
+                { "token": "BroodWarTerran4TownF" },
+                { "token": "BroodWarTerran5TownA" },
+                { "token": "BroodWarTerran5TownB" },
+                { "token": "BroodWarTerran5TownC" },
+                { "token": "BroodWarTerran5TownD" },
+                { "token": "BroodWarTerran5TownE" },
+                { "token": "BroodWarTerran5TownF" },
+                { "token": "BroodWarTerran6TownA" },
+                { "token": "BroodWarTerran6TownB" },
+                { "token": "BroodWarTerran6TownC" },
+                { "token": "BroodWarTerran6TownD" },
+                { "token": "BroodWarTerran6TownE" },
+                { "token": "BroodWarTerran6TownF" },
+                { "token": "BroodWarTerran7TownA" },
+                { "token": "BroodWarTerran7TownB" },
+                { "token": "BroodWarTerran7TownC" },
+                { "token": "BroodWarTerran7TownD" },
+                { "token": "BroodWarTerran7TownE" },
+                { "token": "BroodWarTerran7TownF" },
+                { "token": "BroodWarTerran8TownA" },
+                { "token": "BroodWarTerran8TownB" },
+                { "token": "BroodWarTerran8TownC" },
+                { "token": "BroodWarTerran8TownD" },
+                { "token": "BroodWarTerran8TownE" },
+                { "token": "BroodWarTerran8TownF" },
+                { "token": "BroodWarZerg1TownA" },
+                { "token": "BroodWarZerg1TownB" },
+                { "token": "BroodWarZerg1TownC" },
+                { "token": "BroodWarZerg1TownD" },
+                { "token": "BroodWarZerg1TownE" },
+                { "token": "BroodWarZerg1TownF" },
+                { "token": "BroodWarZerg2TownA" },
+                { "token": "BroodWarZerg2TownB" },
+                { "token": "BroodWarZerg2TownC" },
+                { "token": "BroodWarZerg2TownD" },
+                { "token": "BroodWarZerg2TownE" },
+                { "token": "BroodWarZerg2TownF" },
+                { "token": "BroodWarZerg3TownA" },
+                { "token": "BroodWarZerg3TownB" },
+                { "token": "BroodWarZerg3TownC" },
+                { "token": "BroodWarZerg3TownD" },
+                { "token": "BroodWarZerg3TownE" },
+                { "token": "BroodWarZerg3TownF" },
+                { "token": "BroodWarZerg4TownA" },
+                { "token": "BroodWarZerg4TownB" },
+                { "token": "BroodWarZerg4TownC" },
+                { "token": "BroodWarZerg4TownD" },
+                { "token": "BroodWarZerg4TownE" },
+                { "token": "BroodWarZerg4TownF" },
+                { "token": "BroodWarZerg5TownA" },
+                { "token": "BroodWarZerg5TownB" },
+                { "token": "BroodWarZerg5TownC" },
+                { "token": "BroodWarZerg5TownD" },
+                { "token": "BroodWarZerg5TownE" },
+                { "token": "BroodWarZerg5TownF" },
+                { "token": "BroodWarZerg6TownA" },
+                { "token": "BroodWarZerg6TownB" },
+                { "token": "BroodWarZerg6TownC" },
+                { "token": "BroodWarZerg6TownD" },
+                { "token": "BroodWarZerg6TownE" },
+                { "token": "BroodWarZerg6TownF" },
+                { "token": "BroodWarZerg7TownA" },
+                { "token": "BroodWarZerg7TownB" },
+                { "token": "BroodWarZerg7TownC" },
+                { "token": "BroodWarZerg7TownD" },
+                { "token": "BroodWarZerg7TownE" },
+                { "token": "BroodWarZerg7TownF" },
+                { "token": "BroodWarZerg8TownA" },
+                { "token": "BroodWarZerg8TownB" },
+                { "token": "BroodWarZerg8TownC" },
+                { "token": "BroodWarZerg8TownD" },
+                { "token": "BroodWarZerg8TownE" },
+                { "token": "BroodWarZerg8TownF" },
+                { "token": "BroodWarZerg9TownA" },
+                { "token": "BroodWarZerg9TownB" },
+                { "token": "BroodWarZerg9TownC" },
+                { "token": "BroodWarZerg9TownD" },
+                { "token": "BroodWarZerg9TownE" },
+                { "token": "BroodWarZerg9TownF" },
+                { "token": "BroodWarZerg10TownA" },
+                { "token": "BroodWarZerg10TownB" },
+                { "token": "BroodWarZerg10TownC" },
+                { "token": "BroodWarZerg10TownD" },
+                { "token": "BroodWarZerg10TownE" },
+                { "token": "BroodWarZerg10TownF" }
             ]
         },
         {
@@ -773,6 +1039,13 @@
                 { "token": "Kills" },
                 { "token": "Points" },
                 { "token": "Resources" }
+            ]
+        },
+        {
+            "kind": "Constant",
+            "type": "Location",
+            "tokens":[
+                { "token": "AnyLocation " }
             ]
         }
     ]
