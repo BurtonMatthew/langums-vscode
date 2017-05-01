@@ -8,3 +8,4 @@ Support for LangUMS, a programming language by Alexander Dzhoganov for compiling
 * Code Completion on intrinsics
 * Snippets for intrinsic functions and conditions
 ![Snippets](images/snippets.gif)
+* Detection of viable locations from a broodwar map

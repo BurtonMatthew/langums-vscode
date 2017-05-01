@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.3.0] - 2017-05-01
+### Added
+- Detection of locations from a map file set via config variable
+- Autocompletion of strings from detected locations
+
 ## [0.2.6] - 2017-04-30
 ### Changed
 - Minor quality of life fixes for snippets and code completion

@@ -30,6 +30,10 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Use snippets when completing functions."
+                },
+                "langums.mapPath": {
+                    "type":"string",
+                    "description": "The map path for reading location symbols"
                 }
             }
         },
