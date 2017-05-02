@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { spawn } from 'child_process';
-import Chk from 'bw-chk' 
+import Chk from 'bw-chk'
 
 
 class CompletionProvider implements vscode.CompletionItemProvider 
@@ -60,7 +60,6 @@ class CompletionProvider implements vscode.CompletionItemProvider
             this.locations.push(newItem);
         }
 
-        console.log("Pushed loc tokens");
         this.mapWatcher = this.fs.watch(this.config['mapPath'],{ persistant:false }, this.readMapData);
     }
 
