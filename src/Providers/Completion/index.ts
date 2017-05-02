@@ -10,15 +10,37 @@ class CompletionProvider implements vscode.CompletionItemProvider
     private concat = require('concat-stream');
     private completionItems:vscode.CompletionItem[] = [];
     private locations:vscode.CompletionItem[] = [];
-    private config = vscode.workspace.getConfiguration('langums');
+    private config;
+    private mapWatcher;
+    private context:vscode.ExtensionContext;
 
     constructor(context:vscode.ExtensionContext) 
     {
         this.parseCompletionTokens = this.parseCompletionTokens.bind(this);
         this.parseLocationTokens = this.parseLocationTokens.bind(this);
+        this.readMapData = this.readMapData.bind(this);
+        this.changeConfig = this.changeConfig.bind(this);
 
-        this.fs.readFile(context.extensionPath + '/src/Providers/Completion/completion.json', this.parseCompletionTokens);
-        
+        this.context = context;
+
+        this.changeConfig();
+        vscode.workspace.onDidChangeConfiguration(this.changeConfig)
+    }
+
+    private changeConfig()
+    {
+        this.config = vscode.workspace.getConfiguration('langums');
+        this.fs.readFile(this.context.extensionPath + '/src/Providers/Completion/completion.json', this.parseCompletionTokens);
+        this.readMapData();
+    }
+
+    private readMapData()
+    {
+        this.locations = [];
+
+        if(this.mapWatcher !== undefined)
+            this.mapWatcher.close();
+
         if(this.fs.existsSync(this.config['mapPath']))
         {
             this.fs.createReadStream(this.config['mapPath'])
@@ -37,6 +59,9 @@ class CompletionProvider implements vscode.CompletionItemProvider
             newItem.kind = vscode.CompletionItemKind.Constant;
             this.locations.push(newItem);
         }
+
+        console.log("Pushed loc tokens");
+        this.mapWatcher = this.fs.watch(this.config['mapPath'],{ persistant:false }, this.readMapData);
     }
 
     private parseCompletionTokens(err,data)
@@ -47,6 +72,7 @@ class CompletionProvider implements vscode.CompletionItemProvider
         }
         else
         {
+            this.completionItems = [];
             var obj = JSON.parse(data);
             for(var i in obj.completionCategories)
             {
@@ -67,7 +93,7 @@ class CompletionProvider implements vscode.CompletionItemProvider
                     }
                     newItem.detail = obj.completionCategories[i].type;
                     newItem.documentation = obj.completionCategories[i].tokens[j].documentation;
-                    if (this.config['codeCompletion'] === true) {
+                    if (this.config['codeCompletionSnippets'] === true) {
                         newItem.insertText = obj.completionCategories[i].tokens[j].snippet;
                     }
                     this.completionItems.push(newItem);
@@ -99,6 +125,8 @@ class CompletionProvider implements vscode.CompletionItemProvider
 
     public provideCompletionItems(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken)
     {
+        if(this.config['codeCompletion'] === false)
+            return [];
         if(this.prevChar(document,position) != '\"')
             return this.completionItems;
         else if(this.isOpeningQuote(document,position))
