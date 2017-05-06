@@ -1,5 +1,7 @@
 # LangUMS
 
+DEPRECATED: THIS HAS BEEN MERGED INTO THE OFFICIAL LANGUMS REPO, PLEASE VISIT https://github.com/LangUMS/langums-vscode
+
 Support for LangUMS, a programming language by Alexander Dzhoganov for compiling broodwar maps. https://github.com/AlexanderDzhoganov/langums
 
 ## Features
